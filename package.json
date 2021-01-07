@@ -1,0 +1,12 @@
+{
+  "name": "plop-hyb",
+  "version": "0.0.1",
+  "description": "micro generator",
+  "main": "cli.js",
+  "bin": "cli.js",
+  "author": "yibohao",
+  "license": "MIT",
+  "devDependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
