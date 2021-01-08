@@ -2,5 +2,11 @@
 
 'use strict';
 
-console.log(1);
-module.exports = {};
+const Liftoff = require('liftoff');
+const entry = require('./src/entry');
+
+const Hyb = new Liftoff({
+    name: 'hyb',
+});
+
+Hyb.launch({}, entry);
