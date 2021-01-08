@@ -10,11 +10,19 @@ module.exports = (generator) => {
             type: 'input',
             name: 'componentName',
             message: defaultMessage + ' Please input component name.',
+            validate: function (value) {
+                if ((/.+/).test(value)) { return true; }
+                return 'name is required';
+            }
         },
         {
             type: 'input',
             name: 'componentPath',
             message: defaultMessage + ' Please input component absolute path.',
+            validate: function (value) {
+                if ((/.+/).test(value)) { return true; }
+                return 'name is required';
+            }
         }
     ]).then(results => {
         const {componentName, componentPath} = results;
