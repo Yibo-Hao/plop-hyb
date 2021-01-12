@@ -3,7 +3,6 @@
 const inquirer = require('inquirer');
 const minimist = require('minimist')
 const chalk = require('chalk')
-const handleGenerator = require('./handleGenertor');
 const {_} = minimist(process.argv.slice(2));
 
 const handleProcessArgv = (env, generatorApis) => {

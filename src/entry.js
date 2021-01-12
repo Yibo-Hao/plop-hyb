@@ -7,5 +7,5 @@ module.exports = (env) => {
 
     const generator = handleProcessArgv(env, generatorApis);
 
-    console.log(handleGenerator(generator));;
+    handleGenerator(generator);
 };
