@@ -29,8 +29,8 @@ module.exports = (generator) => {
         const {componentName, componentPath} = results;
         const basePath = process.cwd();
         const templateDirPath = path.resolve(basePath, generator.templateDir)
-        const templateDir = fs.readdirSync(templateDirPath);
         const newDirPath = path.resolve(componentPath, componentName);
+        const templateDir = fs.readdirSync(templateDirPath);
 
         fs.mkdirSync(newDirPath);
 

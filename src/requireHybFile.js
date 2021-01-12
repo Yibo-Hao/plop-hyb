@@ -1,28 +1,8 @@
 const chalk = require('chalk');
-
-class Generator {
-    constructor() {
-        const self = this;
-
-        Object.assign(self, {
-            generators: {},
-
-            setGenerator(name = '', config = {}) {
-                name = name || `generator-${Object.keys(self.generators).length + 1}`;
-
-                self.generators[name] = Object.assign(config, {
-                    name: name
-                });
-
-                return self.generators[name];
-            }
-        });
-    }
-}
+const generatorApis  = require('./callBackArg');
 
 module.exports = function requireHybFile(env) {
     const {configPath: HybFilePath} = env;
-    let generatorApis = new Generator();
 
     if (HybFilePath) {
         const HybFileExport = require(HybFilePath);

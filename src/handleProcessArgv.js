@@ -9,6 +9,7 @@ const {_} = minimist(process.argv.slice(2));
 const handleProcessArgv = (env, generatorApis) => {
     const defaultMessage = chalk.blue('[HYB]');
     const generators = Object.keys(generatorApis.generators);
+    let generator;
 
     if (_.length === 0) {
         inquirer.prompt([{
@@ -17,14 +18,14 @@ const handleProcessArgv = (env, generatorApis) => {
             message: defaultMessage + ' Please choose a generator.',
             choices: generators.map((i) => i)
         }]).then(results => {
-            return generatorApis.getGenerator(results.generator);
-        }).then((generator) => {
-            if (generator) handleGenerator(generator);
-        });
+            generator = generatorApis.getGenerator(results.generator);
+        })
     } else {
         const [generatorName] = _;
-        return generatorApis.getGenerator(generatorName);
+        generator = generatorApis.getGenerator(generatorName);
     }
+
+    return generator;
 };
 
 module.exports = handleProcessArgv;
