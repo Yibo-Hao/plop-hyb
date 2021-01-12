@@ -31,6 +31,7 @@ module.exports = function requireHybFile(env) {
         HybFileExportFunction(generatorApis);
     } else {
         console.error(chalk.red('No HybFile found'));
+        process.exit(1);
     }
 
     generatorApis.getGenerator = function (name) {

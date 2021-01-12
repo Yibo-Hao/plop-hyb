@@ -19,7 +19,7 @@ const handleProcessArgv = (env, generatorApis) => {
         }]).then(results => {
             return generatorApis.getGenerator(results.generator);
         }).then((generator) => {
-            handleGenerator(generator);
+            if (generator) handleGenerator(generator);
         });
     } else {
         const [generatorName] = _;

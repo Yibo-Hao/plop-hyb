@@ -2,6 +2,7 @@ const chalk = require('chalk')
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
+
 const defaultMessage = chalk.blue('[HYB]');
 
 module.exports = (generator) => {
